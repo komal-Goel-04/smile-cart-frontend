@@ -11,7 +11,7 @@ EOT
   else
     changed_files=$(git diff-tree --name-only --no-commit-id ORIG_HEAD HEAD)
 
-    if grep -q "yarn.lock" <<< "$changed_files"; then
+    if echo "$changed_files" | grep -q "yarn.lock"; then
       echo "== Executing yarn install =="
       yarn install
     fi
