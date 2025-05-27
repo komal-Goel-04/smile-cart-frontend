@@ -6,7 +6,14 @@ import { Link } from "react-router-dom";
 import routes from "src/route";
 import { buildUrl } from "utils/url";
 
-const ProductListItem = ({ imageUrl, name, offerPrice, slug }) => (
+const ProductListItem = ({
+  imageUrl,
+  name,
+  offerPrice,
+  slug,
+  isInCart,
+  toggleIsInCart,
+}) => (
   <Link
     className="neeto-ui-border-black neeto-ui-rounded-xl flex w-48 flex-col items-center justify-between border p-4"
     to={buildUrl(routes.products.show, { slug })}
@@ -16,7 +23,7 @@ const ProductListItem = ({ imageUrl, name, offerPrice, slug }) => (
       {name}
     </Typography>
     <Typography>${offerPrice}</Typography>
-    <AddToCart />
+    <AddToCart {...{ isInCart, toggleIsInCart }} />
   </Link>
 );
 
