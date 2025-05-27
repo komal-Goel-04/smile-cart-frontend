@@ -3,6 +3,7 @@ import Product from "components/Product";
 import { Route, Switch, NavLink, Redirect } from "react-router-dom";
 
 import ProductList from "./components/ProductList";
+import routes from "./route";
 
 const App = () => (
   <>
@@ -15,9 +16,9 @@ const App = () => (
       </NavLink>
     </div>
     <Switch>
-      <Route exact component={ProductList} path="/products" />
-      <Route exact component={Product} path="/products/:slug" />
-      <Redirect exact from="/" to="/products" />
+      <Route exact component={ProductList} path={routes.products.index} />
+      <Route exact component={Product} path={routes.products.show} />
+      <Redirect exact from="/" to={routes.products.index} />
       <Route component={PageNotFound} path="*" />
     </Switch>
   </>
