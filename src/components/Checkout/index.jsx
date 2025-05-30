@@ -8,7 +8,7 @@ import {
 import { useFetchCartProducts } from "hooks/reactQuery/useProductsApi";
 import i18n from "i18next";
 import { LeftArrow } from "neetoicons";
-import { Typography, Button, Checkbox } from "neetoui";
+import { Typography, Checkbox } from "neetoui";
 import { Form as NeetoUIForm } from "neetoui/formik";
 import { keys, isEmpty } from "ramda";
 import { useTranslation } from "react-i18next";
@@ -121,12 +121,12 @@ const Checkout = () => {
         <div className="neeto-ui-bg-gray-300 h-screen w-1/2 pt-10">
           <Items {...{ isSubmitDisabled }} />
           <div className="mt-auto flex justify-center">
-            <Button
+            {/* <Button
               className="bg-neutral-800 w-1/3 justify-center"
               disabled={isSubmitDisabled}
               label={t("confirmOrder")}
               type="submit"
-            />
+            /> */}
           </div>
         </div>
       </div>
